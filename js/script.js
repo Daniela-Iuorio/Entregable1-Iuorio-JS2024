@@ -33,52 +33,47 @@ function redirectStudent() {
     let listadoProductos = "Listado de productos:"
     let cantidadProductos = 0
 
+    function agregarCurso(nombreCurso, valorCurso) {
+        alert('Ha elegido el curso ' + nombreCurso + ' por un valor de $' + valorCurso + '.')
+        cantidadProductos++
+        contadorTotal += valorCurso
+        listadoProductos += '\nCurso ' + nombreCurso + ' - $' + valorCurso
+    }
 
     while (cantidadProductos < 1) {
         let cursoElegido = prompt('Ingrese el código del curso al que desea anotarse: \n\n00 - Elementary \n01 - Intermediate \n02 - Advanced \n03 - Business English \n04 - Technical English \n05 - Exam Training')
 
         switch (cursoElegido) {
             case '00':
-                alert('Ha elegido el curso Elementary por un valor de $' + elementary + '.')
-                cantidadProductos++
-                contadorTotal += elementary
-                listadoProductos += '\nCurso Elementary $' + elementary
+                agregarCurso("Elementary", elementary)
                 break
             case '01':
-                alert('Ha elegido el curso Intermediate por un valor de $' + intermediate + '.')
-                cantidadProductos++
-                contadorTotal += intermediate
-                listadoProductos += '\nCurso Intermediate $' + intermediate
+                agregarCurso("Intermediate", intermediate)
                 break
             case '02':
-                alert('Ha elegido el curso Advanced por un valor de $' + advanced + '.')
-                cantidadProductos++
-                contadorTotal += advanced
-                listadoProductos += '\nCurso Advanced $' + advanced
+                agregarCurso("Advanced", advanced)
                 break
             case '03':
-                alert('Ha elegido el curso Business English por un valor de $' + business + '.')
-                cantidadProductos++
-                contadorTotal += business
-                listadoProductos += '\nCurso Business English $' + business
+                agregarCurso("Business English", business)
                 break
             case '04':
-                alert('Ha elegido el curso Technical English por un valor de $' + technical + '.')
-                cantidadProductos++
-                contadorTotal += technical
-                listadoProductos += '\nCurso Technical English $' + technical
+                agregarCurso("Technical English", technical)
                 break
             case '05':
-                alert('Ha elegido el curso Exam Training por un valor de $' + exams + '.')
-                cantidadProductos++
-                contadorTotal += exams
-                listadoProductos += '\nCurso Exam Training $' + exams
+                agregarCurso("Exam Training", exams)
                 break
             default:
                 alert('No se ingresó una opción válida.')
                 break
         }
     }
+
+function agregarMaterial(nombreMaterial, valorMaterial){
+    alert('Ha elegido el '+nombreMaterial+' por un valor de $' + valorMaterial + '.')
+    contadorTotal += valorMaterial
+    listadoProductos += '\n'+nombreMaterial+' - $'+valorMaterial
+}
+
 
     let compraMaterial = confirm('¿Desea adquirir el material didáctico del curso en formato digital?')
 
@@ -88,19 +83,13 @@ function redirectStudent() {
 
             switch (materialElegido) {
                 case '06':
-                    alert('Ha elegido el Libro de Curso por un valor de $' + libroCurso + '.')
-                    contadorTotal += libroCurso
-                    listadoProductos += '\nLibro de Curso $' + libroCurso
+                    agregarMaterial("Libro de Curso", libroCurso)
                     break
                 case '07':
-                    alert('Ha elegido el Audio del libro de curso por un valor de $' + audioLibroCurso + '.')
-                    contadorTotal += audioLibroCurso
-                    listadoProductos += '\nAudio de Libro de Curso $' + audioLibroCurso
+                    agregarMaterial("Audio de Libro de Curso", audioLibroCurso)
                     break
                 case '08':
-                    alert('Ha elegido el Libro de Práctica por un valor de $' + libroPractica + '.')
-                    contadorTotal += libroPractica
-                    listadoProductos += '\nLibro de Práctica $' + libroPractica
+                    agregarMaterial("Libro de Práctica", libroPractica)
                     break
                 default:
                     alert('No se ingresó una opción válida.')
@@ -124,49 +113,45 @@ function redirectTeacher() {
     let ingresoParcial = 0
     let ingresoTotal = 0
     let listadoCursos = "Courses you teach:"
+    let cantidadAlumnos
 
     let confirmacion = confirm('Do you wish to add a course?')
 
-    while(confirmacion){
-        let cursoDictado = prompt('Enter the code of the course you teach. \n\n00 - Elementary \n01 - Intermediate \n02 - Advanced \n03 - Business English \n04 - Technical English \n05 - Exam Training')
-        let cantidadAlumnos = parseInt(prompt('How many students attend this course?'))
+    function ingresarCurso(nombreCurso, valorCurso){
+        ingresoParcial = cantidadAlumnos * valorCurso
+        ingresoTotal += ingresoParcial
+        listadoCursos += '\n'+nombreCurso+' (' + cantidadAlumnos + ' alumnos)'
+    }
 
-        switch(cursoDictado){
+    while (confirmacion) {
+        let cursoDictado = prompt('Enter the code of the course you teach. \n\n00 - Elementary \n01 - Intermediate \n02 - Advanced \n03 - Business English \n04 - Technical English \n05 - Exam Training')
+        cantidadAlumnos = parseInt(prompt('How many students attend this course?'))
+
+        switch (cursoDictado) {
             case '00':
-                ingresoParcial = cantidadAlumnos*elementary
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nElementary ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Elementary", elementary)
                 break
             case '01':
-                ingresoParcial = cantidadAlumnos*intermediate
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nIntermediate ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Intermediate", intermediate)
                 break
             case '02':
-                ingresoParcial = cantidadAlumnos*advanced
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nAdvanced ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Advanced", advanced)
                 break
             case '03':
-                ingresoParcial = cantidadAlumnos*business
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nBusiness English ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Business English", business)
                 break
             case '04':
-                ingresoParcial = cantidadAlumnos*technical
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nTechnical English ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Technical English", technical)
                 break
             case '05':
-                ingresoParcial = cantidadAlumnos*exams
-                ingresoTotal += ingresoParcial
-                listadoCursos += '\nExam Training ('+cantidadAlumnos+' alumnos)'
+                ingresarCurso("Exam Training", exams)
                 break
             default:
                 alert('Invalid. You must enter the two digit code corresponding to the course you teach, one at a time.')
         }
         confirmacion = confirm('Do you wish to add another course?')
     }
-    let gananciaProfe = ingresoTotal*0.7
-    alert(listadoCursos+'\n\nMonthly earnings: $'+gananciaProfe)
+    let gananciaProfe = ingresoTotal * 0.7
+    alert(listadoCursos + '\n\nMonthly earnings: $' + gananciaProfe)
+    alert("Thank you for being part of English Connection!")
 }
