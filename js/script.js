@@ -43,26 +43,37 @@ function redirectStudent() {
 
     let studentName = prompt("¿Cuál es su nombre?").toUpperCase()
 
-    let elegir = prompt('Hello, ' + studentName + '! \n¿Qué desea hacer? (Escriba 1, 2 o 3) \n1- Ver cursos disponibles, sus horarios y valores \n2- Ver precio de materiales \n3- Comprar un curso y/o materiales')
+    let elegir
 
-    switch (elegir) {
-        case '1':
-            listaCursos()
+    while (true) {
+        elegir = prompt('Hello, ' + studentName + '! \n¿Qué desea hacer? (Escriba 1, 2, 3 o 4) \n1- Ver cursos disponibles, sus horarios y valores \n2- Ver precio de materiales \n3- Comprar un curso y/o materiales \n4- Cerrar sesión')
+
+        switch (elegir) {
+            case '1':
+                listaCursos()
+                break
+            case '2':
+                listaMateriales()
+                break
+            case '3':
+                comprarCurso()
+                break
+            case '4':
+                alert('¡Gracias por visitar English Connection!')
+                break
+            default:
+                alert('Por favor ingrese el número de la opción deseada: 1, 2, 3 o 4.')
+                break
+        }
+        if (elegir === '4') {
             break
-        case '2':
-            listaMateriales()
-            break
-        case '3':
-            comprarCurso()
-            break
-        default:
-            alert('Por favor ingrese el número de la opción deseada: 1, 2 o 3.')
+        }
     }
 
     function listaCursos() {
         let mensaje = ""
         for (const curso of cursos) {
-            mensaje += "Curso: " + curso.nombre + "  |Precio: " + curso.valor + "  | Horario: " + curso.horario + "\n\n"
+            mensaje += "Curso: " + curso.nombre + "  | Precio: " + curso.valor + "  | Horario: " + curso.horario + "\n\n"
         }
 
         alert(mensaje)
@@ -71,7 +82,7 @@ function redirectStudent() {
     function listaMateriales() {
         let mensaje = ""
         for (const material of materiales) {
-            mensaje += "Material: " + material.nombre + "  |Precio: " + material.valor + "\n\n"
+            mensaje += "Material: " + material.nombre + "  | Precio: " + material.valor + "\n\n"
         }
 
         alert(mensaje)
@@ -126,27 +137,27 @@ function redirectStudent() {
 
         let compraMaterial = confirm('¿Desea adquirir el material didáctico del curso en formato digital?')
 
-        if (compraMaterial) {
-            while (compraMaterial) {
-                let materialElegido = prompt('Ingrese el código del producto que desea adquirir: \n\n06 - Libro de Curso \n07 - Audio del libro de curso \n08 - Libro de Practica')
 
-                switch (materialElegido) {
-                    case '06':
-                        agregarMaterial("Libro de Curso", libroCurso)
-                        break
-                    case '07':
-                        agregarMaterial("Audio de Libro de Curso", audioLibroCurso)
-                        break
-                    case '08':
-                        agregarMaterial("Libro de Práctica", libroPractica)
-                        break
-                    default:
-                        alert('No se ingresó una opción válida.')
-                }
+        while (compraMaterial) {
+            let materialElegido = prompt('Ingrese el código del producto que desea adquirir: \n\n06 - Libro de Curso \n07 - Audio del libro de curso \n08 - Libro de Practica')
 
-                compraMaterial = confirm('¿Desea agregar más productos?')
+            switch (materialElegido) {
+                case '06':
+                    agregarMaterial("Libro de Curso", libroCurso)
+                    break
+                case '07':
+                    agregarMaterial("Audio de Libro de Curso", audioLibroCurso)
+                    break
+                case '08':
+                    agregarMaterial("Libro de Práctica", libroPractica)
+                    break
+                default:
+                    alert('No se ingresó una opción válida.')
             }
+
+            compraMaterial = confirm('¿Desea agregar más productos?')
         }
+
 
         alert(listadoProductos + '\n\nEl total a pagar es de $' + contadorTotal + '. \n\nThank you!')
     }
@@ -158,24 +169,32 @@ function redirectTeacher() {
 
     let teacherName = prompt("What's your name?").toUpperCase()
 
-    let choice = prompt('Welcome ' + teacherName + '! \n\nWhat would you like to do? (Enter 1 or 2) \n\n1- See the list of courses and their timetables \n2-Calculate your earnings')
+    while (true) {
+        let choice = prompt('Welcome ' + teacherName + '! \n\nWhat would you like to do? (Enter 1, 2 or 3) \n\n1- See the list of courses and their timetables \n2-Calculate your earnings \n3- Exit')
 
-    switch (choice) {
-        case '1':
-            listaCursos()
+        switch (choice) {
+            case '1':
+                listaCursos()
+                break
+            case '2':
+                calculadora()
+                break
+            case '3':
+                alert("Thank you for being part of English Connection!")
+                break
+            default:
+                alert('Please enter the number of your choice: 1 or 2')
+                break
+        }
+        if (choice === '3') {
             break
-        case '2':
-            calculadora()
-            break
-        default:
-            alert('Please enter the number of your choice: 1 or 2')
-            break
+        }
     }
 
     function listaCursos() {
         let mensaje = ""
         for (const curso of cursos) {
-            mensaje += "Course: " + curso.nombre + "  | Timetable: " + curso.horario + "\n"
+            mensaje += "Course: " + curso.nombre + "  |  Timetable: " + curso.horario + "\n\n"
         }
 
         alert(mensaje)
@@ -188,7 +207,7 @@ function redirectTeacher() {
         let listadoCursos = "Courses you teach:"
         let cantidadAlumnos
 
-        let confirmacion = confirm('Do you wish to add a course?')
+        let confirmacion = confirm("Let's calculate how much you'll earn per month, shall we?")
 
         function ingresarCurso(nombreCurso, valorCurso) {
             ingresoParcial = cantidadAlumnos * valorCurso
@@ -228,5 +247,5 @@ function redirectTeacher() {
         alert(listadoCursos + '\n\nMonthly earnings: $' + gananciaProfe)
     }
 }
-alert("Thank you for being part of English Connection!")
+
 
