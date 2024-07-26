@@ -1,30 +1,19 @@
 //Valores de cursos y material didáctico
 
-const Elem = { nombre: "Elementary", valor: 1000, horario: "Monday and Wednesday, 19.00 to 21.00" }
-const Inter = { nombre: "Intermediate", valor: 1500, horario: "Tuesday and Thursday, 19.00 to 21.00" }
-const Adv = { nombre: "Advanced", valor: 2000, horario: "Friday, 18.00 to 21.00" }
-const BusEng = { nombre: "Business English", valor: 3000, horario: "Monday, 8.00 to 10.30" }
-const TechEng = { nombre: "Technical English", valor: 2500, horario: "Saturday, 9.00 to 12.30" }
-const Exam = { nombre: "Exam Training", valor: 2500, horario: "Monday and Wednesday, 16.30 to 18.30" }
+const elem = { nombre: "Elementary", precio: 1000, horario: "Monday and Wednesday, 19.00 to 21.00" }
+const inter = { nombre: "Intermediate", precio: 1500, horario: "Tuesday and Thursday, 19.00 to 21.00" }
+const adv = { nombre: "Advanced", precio: 2000, horario: "Friday, 18.00 to 21.00" }
+const busEng = { nombre: "Business English", precio: 3000, horario: "Monday, 8.00 to 10.30" }
+const techEng = { nombre: "Technical English", precio: 2500, horario: "Saturday, 9.00 to 12.30" }
+const exam = { nombre: "Exam Training", precio: 2500, horario: "Monday and Wednesday, 16.30 to 18.30" }
 
-const cursos = [Elem, Inter, Adv, BusEng, TechEng, Exam,]
+const cursos = [elem, inter, adv, busEng, techEng, exam,]
 
-const libro = { nombre: "Libro de Curso", valor: 300 }
-const audio = { nombre: "Audio de Libro de Curso", valor: 150 }
-const practica = { nombre: "Libro de Práctica", valor: 200 }
+const libro = { nombre: "Libro de Curso", precio: 300 }
+const audio = { nombre: "Audio de Libro de Curso", precio: 150 }
+const practica = { nombre: "Libro de Práctica", precio: 200 }
 
 const materiales = [libro, audio, practica]
-
-//Declaro variables con precios por fuera de los objetos en el array porque necesito usarlos como parámetros en las funciones
-let elementary = 1000
-let intermediate = 1500
-let advanced = 2000
-let business = 3000
-let technical = 2500
-let exams = 2500
-let libroCurso = 300
-let audioLibroCurso = 150
-let libroPractica = 200
 
 //Solicito información al usuario y ejecuto funciones correspondientes según el caso (alumno o profe)
 let usuario = prompt("Welcome to English Connection! \nIngrese 'A' para alumn@s o 'P' para profesor@s").toLowerCase()
@@ -73,7 +62,7 @@ function redirectStudent() {
     function listaCursos() {
         let mensaje = ""
         for (const curso of cursos) {
-            mensaje += "Curso: " + curso.nombre + "  | Precio: " + curso.valor + "  | Horario: " + curso.horario + "\n\n"
+            mensaje += "Curso: " + curso.nombre + "  | Precio: " + curso.precio + "  | Horario: " + curso.horario + "\n\n"
         }
 
         alert(mensaje)
@@ -82,7 +71,7 @@ function redirectStudent() {
     function listaMateriales() {
         let mensaje = ""
         for (const material of materiales) {
-            mensaje += "Material: " + material.nombre + "  | Precio: " + material.valor + "\n\n"
+            mensaje += "Material: " + material.nombre + "  | Precio: " + material.precio + "\n\n"
         }
 
         alert(mensaje)
@@ -105,22 +94,22 @@ function redirectStudent() {
 
             switch (cursoElegido) {
                 case '00':
-                    agregarCurso("Elementary", elementary)
+                    agregarCurso("Elementary", elem.precio)
                     break
                 case '01':
-                    agregarCurso("Intermediate", intermediate)
+                    agregarCurso("Intermediate", inter.precio)
                     break
                 case '02':
-                    agregarCurso("Advanced", advanced)
+                    agregarCurso("Advanced", adv.precio)
                     break
                 case '03':
-                    agregarCurso("Business English", business)
+                    agregarCurso("Business English", busEng.precio)
                     break
                 case '04':
-                    agregarCurso("Technical English", technical)
+                    agregarCurso("Technical English", techEng.precio)
                     break
                 case '05':
-                    agregarCurso("Exam Training", exams)
+                    agregarCurso("Exam Training", exam.precio)
                     break
                 default:
                     alert('No se ingresó una opción válida.')
@@ -143,13 +132,13 @@ function redirectStudent() {
 
             switch (materialElegido) {
                 case '06':
-                    agregarMaterial("Libro de Curso", libroCurso)
+                    agregarMaterial("Libro de Curso", libro.precio)
                     break
                 case '07':
-                    agregarMaterial("Audio de Libro de Curso", audioLibroCurso)
+                    agregarMaterial("Audio de Libro de Curso", audio.precio)
                     break
                 case '08':
-                    agregarMaterial("Libro de Práctica", libroPractica)
+                    agregarMaterial("Libro de Práctica", practica.precio)
                     break
                 default:
                     alert('No se ingresó una opción válida.')
@@ -221,25 +210,25 @@ function redirectTeacher() {
 
             switch (cursoDictado) {
                 case '00':
-                    ingresarCurso("Elementary", elementary)
+                    ingresarCurso("Elementary", elem.precio)
                     break
                 case '01':
-                    ingresarCurso("Intermediate", intermediate)
+                    ingresarCurso("Intermediate", inter.precio)
                     break
                 case '02':
-                    ingresarCurso("Advanced", advanced)
+                    ingresarCurso("Advanced", adv.precio)
                     break
                 case '03':
-                    ingresarCurso("Business English", business)
+                    ingresarCurso("Business English", busEng.precio)
                     break
                 case '04':
-                    ingresarCurso("Technical English", technical)
+                    ingresarCurso("Technical English", techEng.precio)
                     break
                 case '05':
-                    ingresarCurso("Exam Training", exams)
+                    ingresarCurso("Exam Training", exam.precio)
                     break
                 default:
-                    alert('Invalid. You must enter the two digit code corresponding to the course you teach, one at a time.')
+                    alert('Invalid. You must enter the two-digit code corresponding to the course you teach, one at a time.')
             }
             confirmacion = confirm('Do you wish to add another course?')
         }
