@@ -1,39 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+
 :root {
   --verde-oscuro: #14b856ff;
   --verde-claro: #93EC49ff;
-  --fondo-verde: rgba(20, 184, 86, 0.733); }
+  --fondo-verde: rgba(20, 184, 86, 0.733);
+}
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .flex-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
+
+.display-block {
+  display: block;
+  margin: 10px;
+}
 
 button {
   border-radius: 5px;
   border: transparent;
   padding: 5px;
-  box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705); }
+  box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
+}
 
 /* .button-bg-color {
   background-color: rgba(146, 236, 73, 0.247); } */
 
 a {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .backdrop-h1 {
   height: 150px;
@@ -41,7 +53,8 @@ a {
   text-align: center;
   background-size: cover;
   background-position: 50% 33%;
-  background-image: url(https://images.squarespace-cdn.com/content/v1/5ee52f7d9edc8a7ee635591a/1595796353799-TUKLTQR6J55TMNQ6RF5W/Photo+of+Tower+Bridge+at+sunrise+taken+by+Trevor+Sherwin?format=1500w); }
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5ee52f7d9edc8a7ee635591a/1595796353799-TUKLTQR6J55TMNQ6RF5W/Photo+of+Tower+Bridge+at+sunrise+taken+by+Trevor+Sherwin?format=1500w);
+}
 
 h1 {
   color: white;
@@ -49,22 +62,29 @@ h1 {
   font-weight: bold;
   text-shadow: 0 0 5px black;
   line-height: 150px;
-  backdrop-filter: contrast(70%); }
+  backdrop-filter: contrast(70%);
+}
 
 h2 {
   color: var(--verde-oscuro);
   padding: 5px;
   margin: 0px 5px 5px 5px;
   font-family: "Alegreya", serif;
-  text-align: center; }
+  text-align: center;
+}
 
-p, li, input {
+p,
+li,
+input {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: large; }
+  font-size: large;
+}
 
 @media (max-width: 425px) {
   h2 {
-    text-align: center; } }
+    text-align: center;
+  }
+}
 
 
 .navbar-brand {
@@ -74,50 +94,69 @@ p, li, input {
   border-radius: 5px;
   font-family: "Alegreya", serif;
   font-weight: bold;
-  text-transform: uppercase; }
-  .navbar-brand img {
-    padding: 0px 5px; }
+  text-transform: uppercase;
+}
+
+.navbar-brand img {
+  padding: 0px 5px;
+}
 
 a.nav-link {
   font-family: "Alegreya Sans", sans-serif;
   font-weight: bold;
-  font-size: large; }
+  font-size: large;
+}
 
 footer {
   background-color: var(--fondo-verde);
   bottom: 0;
   width: 100%;
-  text-align: center; }
-  footer .footer_text {
-    color: black;
-    padding: 10px;
-    margin: 0; }
+  text-align: center;
+}
+
+footer .footer_text {
+  color: black;
+  padding: 10px;
+  margin: 0;
+}
 
 @media (max-width: 360px) {
   footer .footer_text {
     padding: 5px;
-    font-size: small; } }
+    font-size: small;
+  }
+}
 
 .home .home-content {
   width: 700px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
-  
+
 
 @media (max-width: 700px) {
-  .home .home-content {
-    width: auto; }}
+  .home .home-content, .img-site-const {
+    width: auto;
+  }
+}
 
 
 .form {
-  
+
   margin: 20px;
   width: 300px;
   height: 300px;
   box-shadow: 1px 1px 2px 2px rgba(128, 128, 128, 0.705);
 }
 
-.label, .select, .ingresar {
-  display: block;
+.boton{
+  margin: 10px;
+}
+
+.img-site-const{
+  width: 536px;
+  margin: 10px;
+}
+
+.aviso-site-const{
   margin: 10px;
 }
