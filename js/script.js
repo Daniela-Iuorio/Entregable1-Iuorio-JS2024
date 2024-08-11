@@ -1,3 +1,5 @@
+document.getElementsByClassName('disabled').disabled=true
+
 //Valores de cursos y material didáctico
 
 const elem = { nombre: "Elementary", precio: 1000, horario: "Monday and Wednesday, 19.00 to 21.00" }
@@ -16,7 +18,7 @@ const practica = { nombre: "Libro de Práctica", precio: 200 }
 const materiales = [libro, audio, practica]
 
 //Solicito información al usuario y ejecuto funciones correspondientes según el caso (alumno o profe)
-let usuario = prompt("Welcome to English Connection! \nIngrese 'A' para alumn@s o 'P' para profesor@s").toLowerCase()
+// let usuario = prompt("Welcome to English Connection! \nIngrese 'A' para alumn@s o 'P' para profesor@s").toLowerCase()
 
 if (usuario == 'a') {
     redirectStudent()
