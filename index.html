@@ -4,14 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cursos de inglés para adolescentes y adultos. Preparación de exámenes internacionales. Clases presenciales y virtuales. Recursos multimedia.">
+    <meta name="description"
+        content="Cursos de inglés para adolescentes y adultos. Preparación de exámenes internacionales. Clases presenciales y virtuales. Recursos multimedia.">
     <meta name="keywords" content="inglés, cursos, adultos, exámenes, virtual, online">
     <title>Inicio | English Connection</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Mi CSS -->
     <link rel="stylesheet" href="./CSS/style.css">
     <!-- Favicon -->
@@ -25,7 +26,8 @@
         <!-- Bootstrap NavBar -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><img src="./resources/favicon-32x32.png" alt="logo" class="navbar-logo">English Connection</a>
+                <a class="navbar-brand" href="./index.html"><img src="./resources/favicon-32x32.png" alt="logo"
+                        class="navbar-logo">English Connection</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -62,14 +64,18 @@
             <div class="backdrop-h1">
                 <h1>ENGLISH CONNECTION</h1>
             </div>
-            <div class="home-content">
-                <!-- Welcome Box -->
-            <div class="welcome-box invertida animate__animated animate__fadeInUp">
+            <div class="home-content flex-column">
                 <h2>Welcome!</h2>
-                <p class="box-text">¡Bienvenido a English Connection! Sumérgete en el mundo del inglés con nosotros. En nuestro sitio web, encontrarás una amplia gama de recursos diseñados para potenciar tu dominio del idioma. Desde material didáctico hasta ejercicios interactivos, estamos aquí para apoyarte en cada paso del camino. Descubre nuestros cursos especializados, con un equipo de profesionales dedicados a tu aprendizaje. Además, conoce más sobre nuestro equipo experto y encuentra el medio de contacto ideal para cualquier consulta. ¡Únete a nosotros y lleva tu inglés al siguiente nivel!</p>
+                <form action="#" method="get" id="form" class="form flex-column">
+                    <label class="label" for="user">Are you a teacher or a student?</label>
+                    <select class="select" name="user" id="user">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                    <input class="ingresar" type="submit" value="Ingresar">
+                </form>
+                
             </div>
-            
-        </div>
         </main>
     </div>
     <footer>
